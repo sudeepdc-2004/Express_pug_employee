@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 Employee List
+  table
+    thead
+      tr
+        th ID
+        th Name
+        th Email
+        th Number
+        th Gender
+        th Department
+        th Location
+        th Actions
+    tbody
+      each emp in employees
+        tr
+          td= emp.e_id
+          td= emp.e_name
+          td= emp.e_email
+          td= emp.e_number
+          td= emp.e_gender
+          td= emp.e_dep
+          td= emp.e_location
+          td
+            a.button(href=`/edit/${emp._id}`) Edit
+            a.button.danger(href=`/delete/${emp._id}`) Delete

@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1 Edit Employee
+  form(method="POST", action=`/update/${employee._id}`)
+    input(type="text", name="e_id", value=employee.e_id, required)
+    input(type="text", name="e_name", value=employee.e_name, required)
+    input(type="email", name="e_email", value=employee.e_email, required)
+    input(type="text", name="e_number", value=employee.e_number, required)
+    select(name="e_gender", required)
+      option(value="Male", selected=employee.e_gender=='Male') Male
+      option(value="Female", selected=employee.e_gender=='Female') Female
+      option(value="Other", selected=employee.e_gender=='Other') Other
+    input(type="text", name="e_dep", value=employee.e_dep, required)
+    input(type="text", name="e_location", value=employee.e_location, required)
+    button(type="submit") Update
